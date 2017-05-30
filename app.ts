@@ -5,11 +5,18 @@ import * as logger from 'morgan';
 import * as cookieParser from 'cookie-parser';
 import * as bodyParser from 'body-parser';
 import * as ejs from 'ejs';
+import * as mongoose from 'mongoose';
+require('dotenv').config()
+
 
 import routes from './routes/index';
 import users from './routes/users';
 
 let app = express();
+
+mongoose.connect(process.env.CONNECTION_STRING).
+  then(() => console.log("connection established!"))
+  .catch((err) => console.log(err));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

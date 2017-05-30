@@ -1,7 +1,7 @@
 namespace mainsos.Services {
 
   class CourseServices {
-    private COURSE_RESOURCE = this.$resource('http://localhost:3004/api/v1/courses');
+    private COURSE_RESOURCE = this.$resource('http://localhost:3004/api/v1/courses/:id');
 
     constructor(private $resource, private $window){}
 
@@ -10,7 +10,7 @@ namespace mainsos.Services {
     }
 
     public getOne(id) {
-      return this.COURSE_RESOURCE.get({id: id});
+      return this.COURSE_RESOURCE.get({id: id}).$promise;
     }
 
     public add(course) {

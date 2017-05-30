@@ -26,6 +26,7 @@
     "express": "~4.13.4",
     "mongoose": "^4.10.2",
     "morgan": "~1.7.0",
+    "nodemon": "^1.11.0",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
